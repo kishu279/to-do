@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<title>To-Do</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="store.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <nav id="title-bar">
+        <div id="title">To-Do's :</div>
+      </nav>
+
+      <div id="add-todo">
+        <div id="text-field">Add to-do's ...</div>
+
+        <!-- Button's will be added -->
+      </div>
+
+      <div id="middle">
+        <div id="to-do-print">
+          <h3>TO-DO's :</h3>
+          <button id="btn" onclick="fetchData()">Refresh</button>
+        </div>
+
+        <!-- All contents will be here -->
+        <div id="scroll-content">
+          <div id="content">...</div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>
