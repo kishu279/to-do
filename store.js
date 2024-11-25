@@ -1,27 +1,46 @@
-const url = "https://jsonplaceholder.typicode.com/todos/";
+var complete = true;
 
-const element_id = document.getElementById("content");
-const check = document.getElementById("complete");
+class fetch_data {
+  element_id = document.getElementById("content");
+  check = document.getElementsByName("Completed");
 
-const fetchData = () => {
-  element_id.innerText = ""; // Clear the content before displaying new data
+  constructor(url) {
+    this.url = url;
+  }
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((todo) => {
-        let complete = true;
+  check_complete() {
+    if (this.check.checked == true) {
+      this.check.checked = false;
+      console.log("checked");
+    } else {
+      this.check.checked = true;
+      console.log("unchecked");
+    }
+  }
 
-        if (todo.completed == complete) {
-          const todoElement = document.createElement("div");
-          todoElement.classList.add("todo-item");
-          todoElement.innerHTML = `<strong>ID:</strong> ${todo.id} <br><strong>Title:</strong> ${todo.title}`;
+  fetch_data_method() {
+    this.element_id.innerText = "";
 
-          element_id.appendChild(todoElement);
-        }
+    fetch(this.url)
+      .then((response) => response.json())
+      .then((data) => {
+        data.forEach((todo) => {
+          if (todo.completed == this.check.checked) {
+            let todoElement = document.createElement("div");
+
+            todoElement.classList.add("todo-item");
+            todoElement.innerHTML = `${todo.id} ${todo.title}`;
+
+            this.element_id.appendChild(todoElement);
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching data : ", error);
       });
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-};
+  }
+}
+
+const x = new fetch_data("https://jsonplaceholder.typicode.com/todos/");
+
+x.check_complete();

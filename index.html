@@ -23,7 +23,15 @@
       <div id="middle">
         <div id="to-do-print">
           <h3>TO-DO's :</h3>
-          <button id="btn" onclick="fetchData()">Refresh</button>
+          <button id="btn" onclick="x.fetch_data_method()">Refresh</button>
+
+          <label id="check_box" for="check_box"
+            ><input
+              type="checkbox"
+              name="Completed"
+              onclick="x.check_complete()"
+            />Completed</label
+          >
         </div>
 
         <!-- All contents will be here -->
