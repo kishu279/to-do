@@ -20,25 +20,33 @@
   font-size: 24px;
   border: 2px solid black;
 }
-#text-field {
+/* #text-field {
   border: 2px solid black;
   height: 40px;
   width: 400px;
   font-size: 25px;
+} */
+#text-btn {
+  display: flex;
 }
+#textbox {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5%;
+  height: 30px;
+  width: 400px;
+  font-size: 20px;
+}
+#text_add_btn {
+  margin-left: 10px;
+  border-radius: 20%;
+}
+
 #middle {
   display: flex;
 }
 #to-do-print {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-left: 350px;
-}
-#btn {
-  font-size: 16px;
-}
-#check_box {
-  border: 2px solid black;
-  font-size: 18px;
 }
 #content {
   margin-left: 20px;
@@ -48,6 +56,22 @@
 }
 #scroll-content {
   margin-top: 30px;
+  margin-left: 10px;
   overflow: scroll;
   border: 2px solid black;
+}
+#refresh-btn {
+  font-size: 16px;
+}
+#check_box {
+  font-size: 18px;
+}
+.save_clear {
+  font-size: 16px;
+}
+
+#r-cmp-sa {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
